@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Logged Out{% endblock %}
+
+{% block content %}
+<div class="logout-container">
+    <div class="logout-icon">
+        <i class="fas fa-sign-out-alt"></i>
+    </div>
+    <h2>You've Been Successfully Logged Out</h2>
+    <p class="logout-message">Thank you for using Pollen Classifier. We hope you found the tool useful for your botanical research.</p>
+    
+    <div class="logout-actions">
+        <a href="{{ url_for('home') }}" class="btn btn-primary">
+            <i class="fas fa-home"></i> Return Home
+        </a>
+        <a href="{{ url_for('predict') }}" class="btn btn-outline">
+            <i class="fas fa-search"></i> Identify Another Pollen
+        </a>
+    </div>
+    
+    <div class="feedback">
+        <p>We'd love to hear your feedback!</p>
+        <a href="#" class="btn btn-outline">
+            <i class="fas fa-comment-alt"></i> Share Your Thoughts
+        </a>
+    </div>
+</div>
+{% endblock %}

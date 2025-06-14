@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="container">
+        <h2>Discover the World of Pollen</h2>
+        <p>Upload an image of a pollen grain and our advanced AI will identify the plant species instantly</p>
+        <a href="{{ url_for('predict') }}" class="btn btn-primary pulse">
+            <i class="fas fa-microscope"></i> Try It Now
+        </a>
+    </div>
+</section>
+
+<section class="features">
+    <div class="feature-card">
+        <div class="feature-icon">
+            <i class="fas fa-bolt"></i>
+        </div>
+        <h3>Instant Results</h3>
+        <p>Get accurate species identification in seconds with our deep learning model</p>
+    </div>
+    
+    <div class="feature-card">
+        <div class="feature-icon">
+            <i class="fas fa-database"></i>
+        </div>
+        <h3>Comprehensive Database</h3>
+        <p>Trained on thousands of pollen images across 23 different species</p>
+    </div>
+    
+    <div class="feature-card">
+        <div class="feature-icon">
+            <i class="fas fa-chart-line"></i>
+        </div>
+        <h3>Detailed Analysis</h3>
+        <p>View confidence levels and detailed information about each species</p>
+    </div>
+</section>
+
+<section class="about">
+    <h2>About Our Technology</h2>
+    <p>Our pollen classification system uses state-of-the-art convolutional neural networks to analyze microscopic pollen images. The model was trained on a diverse dataset to ensure accurate identification across various species and conditions.</p>
+    
+    <div class="cta">
+        <a href="{{ url_for('predict') }}" class="btn btn-outline">
+            <i class="fas fa-play"></i> See How It Works
+        </a>
+    </div>
+</section>
+{% endblock %}

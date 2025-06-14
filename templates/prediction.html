@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block title %}Identify Pollen{% endblock %}
+
+{% block content %}
+<div class="prediction-container">
+    <h2><i class="fas fa-microscope"></i> Pollen Identification</h2>
+    <p>Upload a clear image of a pollen grain for species identification</p>
+    
+    <form method="POST" action="{{ url_for('predict') }}" enctype="multipart/form-data" class="upload-form">
+        <div class="upload-area">
+            <input type="file" name="image" id="image-upload" accept="image/*" required>
+            <label for="image-upload" class="upload-label">
+                <div class="upload-icon">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                </div>
+                <span>Drag & drop your image here or click to browse</span>
+                <span id="file-name">No file selected</span>
+            </label>
+        </div>
+        <button type="submit" class="btn btn-primary">
+            <i class="fas fa-search"></i> Identify Pollen
+        </button>
+    </form>
+    
+    {% if prediction %}
+    <div class="result-container">
+        <div class="image-preview">
+            <img src="{{ url_for('static', filename='uploads/' + image_path) }}" alt="Uploaded pollen image">
+        </div>
+        <div class="prediction-result">
+            <div class="result-badge">
+                <i class="fas fa-check-circle"></i> Identification Complete
+            </div>
+            <h3>Prediction Result</h3>
+            <div class="result-detail">
+                <div class="detail-label">Species:</div>
+                <div class="detail-value">{{ prediction }}</div>
+            </div>
+            <div class="result-detail">
+                <div class="detail-label">Confidence:</div>
+                <div class="detail-value">{{ confidence }}%</div>
+            </div>
+            <div class="confidence-meter">
+                <div class="confidence-level" style="width: {{ confidence }}%"></div>
+            </div>
+            <a href="{{ url_for('predict') }}" class="btn btn-outline">
+                <i class="fas fa-redo"></i> Analyze Another
+            </a>
+        </div>
+    </div>
+    {% endif %}
+</div>
+
+<div class="info-section">
+    <h3><i class="fas fa-lightbulb"></i> Tips for Best Results</h3>
+    <ul class="tips-list">
+        <li><i class="fas fa-check-circle"></i> Use high-quality microscope images</li>
+        <li><i class="fas fa-check-circle"></i> Ensure the pollen grain is in focus</li>
+        <li><i class="fas fa-check-circle"></i> Capture multiple angles if possible</li>
+        <li><i class="fas fa-check-circle"></i> Avoid shadows or glare in the image</li>
+    </ul>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+// Add any specific JavaScript for this page here
+</script>
+{% endblock %}
