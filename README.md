@@ -57,7 +57,7 @@ pollen-classifier/
 🚀 Getting Started
 Clone the repository:
 
-git clone https://github.com/your-username/pollen-classifier.git
+git clone https://github.com/sreepriyap9/POLLEN-GRAIN.git
 cd pollen-classifier
 
 Install dependencies:
