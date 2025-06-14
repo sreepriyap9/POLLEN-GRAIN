@@ -46,10 +46,10 @@ Clone the repository:
 
 git clone https://github.com/your-username/pollen-classifier.git
 cd pollen-classifier
+
 Install dependencies:
-
-
 pip install -r requirements.txt
+
 Run the application:
 
 
