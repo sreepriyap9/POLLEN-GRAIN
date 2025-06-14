@@ -1,4 +1,4 @@
-🌼 #Pollen Grain Classification System
+🌼 # Pollen Grain Classification System
 A deep learning-powered web application for identifying plant species from pollen grain images
 
 📌 Overview
@@ -27,22 +27,35 @@ DevOps: GitHub, Python packaging
 📂 Repository Structure
 
 pollen-classifier/
+
 ├── app.py                 Flask application entry point
+
 ├── model.h5               Trained Keras model
+
 ├── requirements.txt       Python dependencies
+
 ├── static/                Static assets
+
 │   ├── css/               Stylesheets
+
 │   └── js/                JavaScript files
+
 ├── templates/             Flask templates
+
 │   ├── base.html          Base template
+
 │   ├── index.html         Home page
+
 │   ├── prediction.html    Prediction interface
+
 │   └── logout.html        Logout page
+
 ├── uploads/               User-uploaded images
+
 └── README.md              Project documentation
+
 🚀 Getting Started
 Clone the repository:
-
 
 git clone https://github.com/your-username/pollen-classifier.git
 cd pollen-classifier
